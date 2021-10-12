@@ -8,7 +8,7 @@ namespace BattleShip
 {
     class GameBoard
     {
-        private List<Coordinate> _coordinates { get; set; } = new List<Coordinate>();
+        private List<CoordinateOLD> _coordinates { get; set; } = new List<CoordinateOLD>();
         
         public void drawBoard ()
         {
@@ -56,15 +56,15 @@ namespace BattleShip
             var randomColumn = "A";
             var randomRow = 1;
 
-            List<Coordinate> shipCoordinates = tryShipCoordinates(randomColumn, randomRow);
+            List<CoordinateOLD> shipCoordinates = tryShipCoordinates(randomColumn, randomRow);
 
-            var ship = new Ship(shipCoordinates);
+            var ship = new ShipOLD(shipCoordinates);
             ship.changeIsShip();
         }
 
-        private List<Coordinate> tryShipCoordinates(string randomColumn, int randomRow)
+        private List<CoordinateOLD> tryShipCoordinates(string randomColumn, int randomRow)
         {
-            List<Coordinate> ship = new List<Coordinate>();
+            List<CoordinateOLD> ship = new List<CoordinateOLD>();
             foreach (var coordinate in _coordinates)
             {
                 if (coordinate.Row == 3)
@@ -104,7 +104,7 @@ namespace BattleShip
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    _coordinates.Add(new Coordinate(column, i + 1, false, false));
+                    _coordinates.Add(new CoordinateOLD(column, i + 1, false, false));
                 }
             }
         }

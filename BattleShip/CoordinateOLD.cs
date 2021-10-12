@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BattleShip
 {
-    class Coordinate
+    class CoordinateOLD
     {
 
-        public Coordinate(string column, int row, bool isShip, bool isVisible)
+        public CoordinateOLD(string column, int row, bool isShip, bool isVisible)
         {
             Column = column;
             Row = row;
